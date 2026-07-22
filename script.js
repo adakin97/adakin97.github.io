@@ -27,6 +27,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   });
 });
 
+// ── Scroll reveal ──
+const revealables = document.querySelectorAll('.case, .card, .timeline__item, .play__item, .skills__col, .edu__item');
+revealables.forEach(el => el.classList.add('reveal'));
+
+const revealObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('is-visible');
+      revealObserver.unobserve(entry.target);
+    }
+  });
+}, { rootMargin: '0px 0px -10% 0px' });
+
+revealables.forEach(el => revealObserver.observe(el));
+
 // ── Active nav link on scroll ──
 const sections = document.querySelectorAll('section[id]');
 const navLinks = document.querySelectorAll('.nav__links a, .nav__drawer a');
