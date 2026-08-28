@@ -1,59 +1,72 @@
-// ── Mobile nav toggle ──
-const burger = document.querySelector('.nav__burger');
-const drawer = document.querySelector('.nav__drawer');
-
-burger.addEventListener('click', () => {
-  const isOpen = drawer.classList.toggle('is-open');
-  burger.setAttribute('aria-expanded', isOpen);
-  drawer.setAttribute('aria-hidden', !isOpen);
-});
-
-drawer.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    drawer.classList.remove('is-open');
-    burger.setAttribute('aria-expanded', 'false');
-    drawer.setAttribute('aria-hidden', 'true');
+// ── Mobile nav ──
+const burger = document.getElementById("burger");
+const nav = document.getElementById("siteNav");
+if (burger && nav) {
+  burger.addEventListener("click", () => {
+    const open = nav.classList.toggle("is-open");
+    burger.setAttribute("aria-expanded", String(open));
   });
-});
+  nav.querySelectorAll("a").forEach((a) =>
+    a.addEventListener("click", () => {
+      nav.classList.remove("is-open");
+      burger.setAttribute("aria-expanded", "false");
+    })
+  );
+}
 
-// ── Smooth scroll (fallback for older browsers) ──
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', e => {
-    const target = document.querySelector(anchor.getAttribute('href'));
-    if (target) {
-      e.preventDefault();
-      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
+// ── Before / after slider ──
+const range = document.getElementById("compareRange");
+const compareTop = document.getElementById("compareTop");
+const handle = document.getElementById("compareHandle");
+if (range && compareTop && handle) {
+  const update = () => {
+    const v = Number(range.value);
+    compareTop.style.clipPath = "inset(0 " + (100 - v) + "% 0 0)";
+    handle.style.left = v + "%";
+  };
+  range.addEventListener("input", update);
+  update();
+}
+
+// ── Nighttime lights stepper ──
+const lightsImg = document.getElementById("lightsImg");
+const lightsBtns = document.querySelectorAll(".lights__btn");
+if (lightsImg && lightsBtns.length) {
+  // Preload frames so switching is instant.
+  lightsBtns.forEach((btn) => {
+    new Image().src = "assets/images/lights-" + btn.dataset.year + ".jpg";
   });
-});
-
-// ── Scroll reveal ──
-const revealables = document.querySelectorAll('.case, .card, .timeline__item, .play__item, .skills__col, .edu__item');
-revealables.forEach(el => el.classList.add('reveal'));
-
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('is-visible');
-      revealObserver.unobserve(entry.target);
-    }
+  lightsBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      lightsBtns.forEach((b) => b.classList.remove("is-active"));
+      btn.classList.add("is-active");
+      const year = btn.dataset.year;
+      lightsImg.src = "assets/images/lights-" + year + ".jpg";
+      lightsImg.alt =
+        "Nighttime lights over the Shenzhen and Hong Kong region in " + year;
+    });
   });
-}, { rootMargin: '0px 0px -10% 0px' });
+}
 
-revealables.forEach(el => revealObserver.observe(el));
+// ── Reveal on scroll ──
+const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (!reduceMotion && "IntersectionObserver" in window) {
+  const targets = document.querySelectorAll(".case, .mini, .principle, .job, .small-card, .now");
+  targets.forEach((el) => el.classList.add("reveal"));
+  const io = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((e) => {
+        if (e.isIntersecting) {
+          e.target.classList.add("is-visible");
+          io.unobserve(e.target);
+        }
+      });
+    },
+    { threshold: 0.08 }
+  );
+  targets.forEach((el) => io.observe(el));
+}
 
-// ── Active nav link on scroll ──
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('.nav__links a, .nav__drawer a');
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      navLinks.forEach(link => link.classList.remove('is-active'));
-      const active = document.querySelector(`.nav__links a[href="#${entry.target.id}"]`);
-      if (active) active.classList.add('is-active');
-    }
-  });
-}, { rootMargin: '-40% 0px -55% 0px' });
-
-sections.forEach(s => observer.observe(s));
+// ── Footer year ──
+const year = document.getElementById("year");
+if (year) year.textContent = new Date().getFullYear();
