@@ -22,6 +22,7 @@
       <a href="#top" class="header__name">Alexander Dakin</a>
       <nav class="header__nav" id="siteNav" aria-label="Main navigation">
         <a href="#work">Work</a>
+        <a href="#building">Now building</a>
         <a href="#approach">Approach</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
@@ -234,6 +235,206 @@
       </div>
     </section>
 
+    <!-- ── Now building (tabs) ── -->
+    <section id="building" class="section section--rule">
+      <div class="container">
+        <header class="sec-head">
+          <h2>Now building</h2>
+          <p>Work in progress, in the open. Each tab says what the project is, what I am building and testing, and the concept note behind it. Work done for an employer is described without naming the organisation or anyone in it.</p>
+        </header>
+
+        <div class="tabs" id="buildTabs">
+          <div class="tabs__list" role="tablist" aria-label="Projects in progress">
+            <button role="tab" id="tab-library" aria-controls="panel-library" aria-selected="true">Library assistant</button>
+            <button role="tab" id="tab-roi" aria-controls="panel-roi" aria-selected="false" tabindex="-1">Security spending model</button>
+            <button role="tab" id="tab-datamap" aria-controls="panel-datamap" aria-selected="false" tabindex="-1">Data map and CRM</button>
+            <button role="tab" id="tab-peripatos" aria-controls="panel-peripatos" aria-selected="false" tabindex="-1">Peripatos</button>
+            <button role="tab" id="tab-music" aria-controls="panel-music" aria-selected="false" tabindex="-1">Music catalogue</button>
+          </div>
+
+          <!-- Library assistant -->
+          <article class="tabs__panel" role="tabpanel" id="panel-library" aria-labelledby="tab-library" tabindex="0">
+            <div class="case__meta"><span class="chip chip--build">Prototype</span><span class="case__topic">Retrieval-augmented AI · Day job</span></div>
+            <h3>A library assistant that answers only from its sources</h3>
+            <p>
+              An international NGO network I work for holds around twenty years of security guidance:
+              about 1,250 guides, toolkits and research papers. People struggle to find the right one
+              unless they already speak the vocabulary. I am building an assistant that takes a question
+              in plain words, in English, French, Spanish or Arabic, searches the library and answers
+              only from what it finds, with a link to every source.
+            </p>
+            <div class="tabs__cols">
+              <div>
+                <h4>What I am building</h4>
+                <ul>
+                  <li>A catalogue of the whole public library, collected politely from the site's sitemaps: type, date, language, authorship and files for every item.</li>
+                  <li>Automatic flags for guidance that may be out of date, split into what the organisation can update and what it can only label as historical.</li>
+                  <li>A working prototype: keyword search (BM25) over resource descriptions and the full text of the core guides, then a language model that writes from the passages found and cites them.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What I am testing</h4>
+                <ul>
+                  <li>53 test questions covering finding a resource, explaining a term, other languages, sensitive questions, emergencies and out-of-scope requests.</li>
+                  <li>Three build routes side by side: our own build, a website plugin and a hosted product, judged on answer quality first and on whether someone other than me could run it.</li>
+                  <li>Safety rules: an emergency gets a fixed message, never a generated one, and the assistant points to guidance rather than advising on a live situation.</li>
+                </ul>
+              </div>
+            </div>
+            <details class="concept">
+              <summary>Concept note</summary>
+              <dl>
+                <dt>Problem</dt><dd>Search depends on knowing the right terms. A field manager typing "staff robbed at a checkpoint" will not find a guide filed under access and armed robbery.</dd>
+                <dt>Approach</dt><dd>Retrieval-augmented generation rather than training a model: the library is searched at question time, so new guidance counts as soon as it is published and every answer can be checked against its source.</dd>
+                <dt>Safeguards</dt><dd>Public content only in the first version; every claim cited; no advice on live situations; questions logged briefly and without personal details.</dd>
+                <dt>Running it</dt><dd>Designed to need four to six days of upkeep a year, with a step-by-step runbook so a non-developer can own it.</dd>
+                <dt>Next</dt><dd>Real member questions to replace my drafts, the route test, then a build in early 2027.</dd>
+              </dl>
+            </details>
+            <div class="case__tags"><span class="tag">Python</span><span class="tag">BM25</span><span class="tag">RAG</span><span class="tag">Claude API</span><span class="tag">Evaluation</span></div>
+            <p class="case__note">Prototype and catalogue built with Claude Code. Public content only.</p>
+          </article>
+
+          <!-- Security spending model -->
+          <article class="tabs__panel" role="tabpanel" id="panel-roi" aria-labelledby="tab-roi" tabindex="0" hidden>
+            <div class="case__meta"><span class="chip chip--build">Testing</span><span class="case__topic">Risk modelling · Day job</span></div>
+            <h3>Testing a model of what security spending returns</h3>
+            <p>
+              A colleague built a prototype that estimates the return on an NGO's security spending:
+              how much expected loss a set of measures avoids, against what they cost, with ranges from
+              a Monte Carlo simulation. The model is theirs. My part is to test it: run its maths in code,
+              see which inputs move the answer, and write up what should change.
+            </p>
+            <div class="tabs__cols">
+              <div>
+                <h4>What I am testing</h4>
+                <ul>
+                  <li>The expected-loss core, the gamma-Poisson updating that blends reference rates with an organisation's own records, and the 2,000-run simulation.</li>
+                  <li>Edge cases: whether a bad year wrongly raises the return, and how much the result rests on placeholder values.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What I found</h4>
+                <ul>
+                  <li>The headline figure should be the simulation's middle run, not a single central calculation: in the worked example they differ.</li>
+                  <li>Overlapping measures can double-count, and several inputs carry no range at all, so the uncertainty shown is too narrow.</li>
+                </ul>
+              </div>
+            </div>
+            <details class="concept">
+              <summary>Concept note</summary>
+              <dl>
+                <dt>Problem</dt><dd>Security budgets are hard to defend because the return is losses that never happened, and nobody ever observes it.</dd>
+                <dt>Approach</dt><dd>An expected-loss model in the Open FAIR family, reported as ranges. The closest everyday comparison is insurance: it costs a little in a typical year and saves a lot in a bad one.</dd>
+                <dt>My contribution</dt><dd>Review, testing and a written list of eleven fixes, three of them recommended first. A beta with the fixes was built with Claude Code for the author to take or leave.</dd>
+                <dt>Next</dt><dd>Agree the fixes with the author, then calibrate reference rates against open incident data.</dd>
+              </dl>
+            </details>
+            <div class="case__tags"><span class="tag">Monte Carlo</span><span class="tag">Bayesian updating</span><span class="tag">Risk modelling</span></div>
+          </article>
+
+          <!-- Data map and CRM -->
+          <article class="tabs__panel" role="tabpanel" id="panel-datamap" aria-labelledby="tab-datamap" tabindex="0" hidden>
+            <div class="case__meta"><span class="chip chip--build">In progress</span><span class="case__topic">Data governance · Day job</span></div>
+            <h3>Mapping an organisation's data, then cleaning it up</h3>
+            <p>
+              Before any AI tool touches an organisation's data, someone has to know where that data
+              lives and how it moves. I am mapping the systems behind a membership network: its CRM,
+              forms, mailing tool and spreadsheets, and fixing how contacts and organisations are
+              categorised so that its impact indicators can actually be counted.
+            </p>
+            <div class="tabs__cols">
+              <div>
+                <h4>What I am building</h4>
+                <ul>
+                  <li>A data map that doubles as the organisation's UK GDPR record of processing.</li>
+                  <li>An improvements register: every possible fix with a stable ID, the evidence behind it and its status.</li>
+                  <li>A new categorisation scheme for contacts and organisations, agreed with the team and migrated in bulk.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>How I am doing it</h4>
+                <ul>
+                  <li>Structure, never records: I work from exports of the CRM's objects, fields and links, not from member data.</li>
+                  <li>Changes go through sign-off and are tested on a few records before the rest, with a backup export as the undo.</li>
+                </ul>
+              </div>
+            </div>
+            <details class="concept">
+              <summary>Concept note</summary>
+              <dl>
+                <dt>Problem</dt><dd>Categories drift, duplicate score fields multiply, and reports stop matching each other. Any automation built on top inherits the mess.</dd>
+                <dt>Approach</dt><dd>Rules before models: document the fields, agree definitions, fix the counting, and only then automate.</dd>
+                <dt>Next</dt><dd>A field dictionary for everything behind funder reports, and a check of how engagement is counted.</dd>
+              </dl>
+            </details>
+            <div class="case__tags"><span class="tag">Data governance</span><span class="tag">CRM</span><span class="tag">UK GDPR</span><span class="tag">Excel</span></div>
+          </article>
+
+          <!-- Peripatos -->
+          <article class="tabs__panel" role="tabpanel" id="panel-peripatos" aria-labelledby="tab-peripatos" tabindex="0" hidden>
+            <div class="case__meta"><span class="chip chip--live">In use</span><span class="case__topic">Learning · Personal</span></div>
+            <h3>Peripatos: a learning grove for what I meet each day</h3>
+            <p>
+              I have learnt a lot of maths, statistics and economics and forgotten more of it. Peripatos
+              turns what I come across each day, at work or in reading, into short study cards, and grows
+              each one as a tree as I recall it. The name is the covered walk at Aristotle's Lyceum, where
+              teaching happened on foot.
+            </p>
+            <div class="tabs__cols">
+              <div>
+                <h4>What it does</h4>
+                <ul>
+                  <li>A path of everything I have planted, in the order I met it, with forks suggesting what to learn next, starting with gaps underneath what I already know.</li>
+                  <li>Daily walks of spaced repetition: plants come back after 1, 2, 5, 12, 30 and 75 days, and wilt if left.</li>
+                  <li>Claude turns a note such as "gamma distribution, seen in a risk model" into a card and names the topics around it.</li>
+                </ul>
+              </div>
+              <div>
+                <h4>What is in it</h4>
+                <ul>
+                  <li>52 topics across maths, data science, economics and computer engineering, each with real-world uses, interactive sketches and further reading.</li>
+                  <li>The trees are drawn by a seeded recursive function, so each topic always grows the same way.</li>
+                </ul>
+              </div>
+            </div>
+            <details class="concept">
+              <summary>Concept note</summary>
+              <dl>
+                <dt>Inspiration</dt><dd>A friend's app for learning Chinese from what she was watching and reading.</dd>
+                <dt>Idea</dt><dd>Learning sticks when it is tied to where you met it and revisited on a schedule. The game is growth: recall makes a plant grow, neglect makes it wilt.</dd>
+                <dt>Next</dt><dd>More topics, fresh questions written by Claude so walks do not repeat, and a teach-it-back mode.</dd>
+              </dl>
+            </details>
+            <div class="case__tags"><span class="tag">JavaScript</span><span class="tag">SVG</span><span class="tag">Spaced repetition</span><span class="tag">Claude</span></div>
+            <p class="case__note">Built with Claude Code to my brief. Private for now.</p>
+          </article>
+
+          <!-- Music catalogue -->
+          <article class="tabs__panel" role="tabpanel" id="panel-music" aria-labelledby="tab-music" tabindex="0" hidden>
+            <div class="case__meta"><span class="chip chip--plan">Planned</span><span class="case__topic">Music data · Personal</span></div>
+            <h3>A better way to catalogue music</h3>
+            <p>
+              Music libraries are catalogued by artist, album and genre, but that is rarely how people
+              remember or look for music. This project will explore a better catalogue, starting from my
+              own thirteen years of listening history, already mapped in
+              <a href="https://adakin97.github.io/music" target="_blank" rel="noopener">Side A / Side B</a>.
+            </p>
+            <details class="concept" open>
+              <summary>Concept note (early draft)</summary>
+              <dl>
+                <dt>Problem</dt><dd>[To write: what is wrong with how music is catalogued today, and for whom.]</dd>
+                <dt>Starting point</dt><dd>A personal listening history with dates, artists and tracks, already cleaned for the dashboard.</dd>
+                <dt>Questions</dt><dd>[To decide: catalogue for one listener or many; what a better catalogue groups by; which open music data to join.]</dd>
+                <dt>Next</dt><dd>[To write.]</dd>
+              </dl>
+            </details>
+            <div class="case__tags"><span class="tag">Music metadata</span><span class="tag">Python</span></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
     <!-- ── Approach ── -->
     <section id="approach" class="section section--tint">
       <div class="container">
@@ -426,11 +627,11 @@
         </div>
 
         <div class="now">
-          <h3>Now <span class="now__date">August 2026</span></h3>
+          <h3>Now <span class="now__date">November 2026</span></h3>
           <ul>
-            <li>Finishing the UC Davis GIS course and the AWS ML Engineer certification.</li>
-            <li>Building the GB grid warehouse: SQL, dbt and BigQuery on real electricity data.</li>
-            <li>Running the peatland difference-in-differences analysis through to its write-up.</li>
+            <li>Working on data, AI and systems for an international NGO network: a library assistant, a data map and a review of a security spending model (see <a href="#building">Now building</a>).</li>
+            <li>Revising maths, statistics and computer engineering with Peripatos, a learning app built around what I meet each day.</li>
+            <li>Planning a project on how to catalogue music better.</li>
           </ul>
         </div>
       </div>
