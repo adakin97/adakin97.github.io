@@ -3,30 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Alexander Dakin. Data scientist in London working with maps, data and AI: satellite analysis, data pipelines and retrieval-based AI, with an economics background.">
-  <meta property="og:title" content="Alexander Dakin · Maps, data and AI">
-  <meta property="og:description" content="Satellite analysis, data pipelines and retrieval-based AI, with an economics background.">
+  <meta name="description" content="Alexander Dakin. Data scientist in London. Data pipelines, data quality and satellite analysis, with an economics background.">
+  <meta property="og:title" content="Alexander Dakin · Data Scientist">
+  <meta property="og:description" content="Data pipelines, data quality and satellite analysis, with an economics background.">
   <meta property="og:type" content="website">
-  <meta name="theme-color" content="#0b0d10">
-  <title>Alexander Dakin · Maps, data and AI</title>
+  <title>Alexander Dakin · Data Scientist</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Hanken+Grotesk:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
-  <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
 
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#work">Skip to content</a>
 
   <header class="site-header">
     <div class="container header__inner">
-      <a href="#home" class="header__name">Alexander Dakin</a>
+      <a href="#top" class="header__name">Alexander Dakin</a>
       <nav class="header__nav" id="siteNav" aria-label="Main navigation">
-        <a href="#home" data-nav="home">Home</a>
-        <a href="#projects" data-nav="projects">Projects</a>
-        <a href="#experience" data-nav="experience">Experience</a>
-        <a href="#about" data-nav="about">About</a>
+        <a href="#work">Work</a>
+        <a href="#approach">Approach</a>
+        <a href="#experience">Experience</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
         <a href="assets/Alex_Dakin_CV.pdf" class="nav-cv" download>CV<span class="nav-cv__ext">.pdf</span></a>
       </nav>
       <button class="header__burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="siteNav">
@@ -35,649 +34,304 @@
     </div>
   </header>
 
-  <main id="main">
+  <main id="top">
 
-    <!-- ════════════════ HOME ════════════════ -->
-    <section class="view" id="view-home" data-view="home" aria-label="Home">
-      <div class="hero">
-        <div class="hero__map" id="heroMap" aria-label="Interactive map of where my projects and career have taken place"></div>
-        <div class="container hero__text">
-          <p class="eyebrow">Data scientist · maps, data and AI · London</p>
-          <h1 class="hero__headline">I make messy data <em>reliable</em>.<br>Then I put it to work.</h1>
-          <p class="hero__sub">
-            Economist by training, data scientist by trade. Four years building production data systems at
-            Bloomberg and a research consultancy, then a year applying the same discipline to satellite imagery.
-            Now I work on data, AI and systems for an international NGO network.
-          </p>
-          <div class="hero__cta">
-            <a href="#projects" class="btn btn--primary">Explore the projects</a>
-            <a href="assets/Alex_Dakin_CV.pdf" class="btn btn--secondary" download>Download CV</a>
-          </div>
-          <div class="maplayers" role="group" aria-label="Map layer">
-            <span class="maplayers__label">On the map</span>
-            <button class="maplayers__btn is-active" data-layer="projects" aria-pressed="true">Projects</button>
-            <button class="maplayers__btn" data-layer="career" aria-pressed="false">Career</button>
-          </div>
-        </div>
-      </div>
-
+    <!-- ── Hero ── -->
+    <section class="hero">
       <div class="container">
-        <dl class="stats">
-          <div><dt>7</dt><dd>areas assessed by satellite radar</dd></div>
+        <p class="hero__eyebrow">Data scientist · London · open to work</p>
+        <h1 class="hero__headline">I make messy data <em>reliable</em>.<br>Then I put it to work.</h1>
+        <p class="hero__sub">
+          Economist by training, data scientist by trade. I spent four years building production
+          data systems at Bloomberg and a research consultancy. Since early 2026 I have been applying
+          the same discipline to satellite imagery and the questions behind it, from conflict damage
+          to how cities grow.
+        </p>
+        <div class="hero__cta">
+          <a href="#work" class="btn btn--primary">See the work</a>
+          <a href="assets/Alex_Dakin_CV.pdf" class="btn btn--secondary" download>Download CV</a>
+        </div>
+        <dl class="hero__stats">
+          <div><dt>7</dt><dd>areas assessed by satellite</dd></div>
           <div><dt>100,000+</dt><dd>records classified at Bloomberg</dd></div>
           <div><dt>90 &rarr; 95%</dt><dd>error-free rate after a training programme I taught on</dd></div>
-          <div><dt>13</dt><dd>projects written up below, from radar to retrieval</dd></div>
         </dl>
       </div>
-
-      <section class="section">
-        <div class="container">
-          <header class="sec-head">
-            <p class="eyebrow">Selected</p>
-            <h2>Three to start with</h2>
-          </header>
-          <div class="feature-grid">
-            <a class="feature" href="#p-damage-maps">
-              <img src="assets/images/damage-qatar.jpg" alt="" loading="lazy" width="1400" height="697">
-              <span class="chip chip--done">Built 2026</span>
-              <h3>Damage Maps</h3>
-              <p>Radar change detection across seven areas, from Bakhmut to North London.</p>
-            </a>
-            <a class="feature" href="#p-library-assistant">
-              <div class="feature__art" aria-hidden="true"><svg viewBox="0 0 320 160"><g class="art-lines"><path d="M20 120 C80 40, 140 140, 200 60 S300 80, 300 30"/><path d="M20 140 C90 90, 150 150, 210 100 S290 110, 300 70"/></g><g class="art-dots"><circle cx="60" cy="88" r="4"/><circle cx="140" cy="112" r="4"/><circle cx="205" cy="66" r="5"/><circle cx="262" cy="70" r="4"/></g></svg></div>
-              <span class="chip chip--build">Prototype</span>
-              <h3>Library assistant</h3>
-              <p>Plain-language questions over twenty years of security guidance, answered with sources.</p>
-            </a>
-            <a class="feature" href="#p-shenzhen">
-              <img src="assets/images/lights-2023.jpg" alt="" loading="lazy" width="1000" height="670">
-              <span class="chip chip--live">Interactive</span>
-              <h3>Shenzhen, watched from orbit</h3>
-              <p>Three decades of growth in Landsat and nighttime lights.</p>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      <section class="section section--tint" id="approach">
-        <div class="container">
-          <header class="sec-head">
-            <p class="eyebrow">Approach</p>
-            <h2>How I think about data</h2>
-            <p>The projects differ. The discipline behind them does not.</p>
-          </header>
-          <div class="principles">
-            <article class="principle">
-              <h3>Rules before models</h3>
-              <p>At Bloomberg I used a scikit-learn classifier to analyse a framework of 5,000+ business rules and work out which should survive a data-model migration. The lesson stuck. Most data quality problems are governance problems, and a model only helps once you understand the rules it sits on.</p>
-            </article>
-            <article class="principle">
-              <h3>Humans in the loop, on purpose</h3>
-              <p>A good pipeline decides what a machine should do and where a person must check. The ingestion workflow I built at Bloomberg routed exceptions to analysts rather than passing them silently. In my radar work, nothing gets called damage until a person has looked. Knowing what not to automate is the skill.</p>
-            </article>
-            <article class="principle">
-              <h3>Validation is the deliverable</h3>
-              <p>A detection nobody can trust is noise. The interesting work is the checking: baselines, controls, false positives, and what the sensor cannot see. This site says "in build" wherever something is unfinished, because a claim without evidence behind it costs more than it earns.</p>
-            </article>
-            <article class="principle">
-              <h3>Write it down</h3>
-              <p>Data only changes decisions when someone who does not write code can act on it. At Bloomberg I was the main point of contact for the EMEA ESG loans dataset and turned it into written market research, including two editions of LMA Horizons read by banks and asset managers.</p>
-            </article>
-          </div>
-          <figure class="pipeline">
-            <figcaption>The shape most of my pipelines take</figcaption>
-            <svg viewBox="0 0 980 200" role="img" aria-label="Diagram of a data pipeline: sources flow to ingestion, then rule checks. Clean records flow to a trusted dataset and analysis. Exceptions route to human review, which feeds rule updates back into the checks.">
-              <defs><marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" class="pipe-arrow"/></marker></defs>
-              <g class="pipe-box"><rect x="10" y="55" width="130" height="52" rx="10"/><text x="75" y="86">Sources</text></g>
-              <g class="pipe-box"><rect x="205" y="55" width="130" height="52" rx="10"/><text x="270" y="86">Ingestion</text></g>
-              <g class="pipe-box pipe-box--accent"><rect x="400" y="55" width="150" height="52" rx="10"/><text x="475" y="86">Rule checks</text></g>
-              <g class="pipe-box"><rect x="620" y="10" width="160" height="52" rx="10"/><text x="700" y="41">Trusted dataset</text></g>
-              <g class="pipe-box pipe-box--human"><rect x="620" y="110" width="160" height="52" rx="10"/><text x="700" y="141">Human review</text></g>
-              <g class="pipe-box"><rect x="845" y="10" width="125" height="52" rx="10"/><text x="907" y="41">Analysis</text></g>
-              <g class="pipe-line">
-                <line x1="140" y1="81" x2="198" y2="81" marker-end="url(#arr)"/>
-                <line x1="335" y1="81" x2="393" y2="81" marker-end="url(#arr)"/>
-                <path d="M550 70 L612 40" fill="none" marker-end="url(#arr)"/>
-                <path d="M550 93 L612 132" fill="none" marker-end="url(#arr)"/>
-                <line x1="780" y1="36" x2="838" y2="36" marker-end="url(#arr)"/>
-                <path d="M700 162 C700 182 475 182 475 115" fill="none" marker-end="url(#arr)" stroke-dasharray="5 5"/>
-              </g>
-              <text class="pipe-note" x="585" y="30">clean</text>
-              <text class="pipe-note" x="577" y="125">exceptions</text>
-              <text class="pipe-note" x="587" y="196">rules updated</text>
-            </svg>
-          </figure>
-        </div>
-      </section>
     </section>
 
-    <!-- ════════════════ PROJECTS INDEX ════════════════ -->
-    <section class="view section" id="view-projects" data-view="projects" aria-label="Projects">
+    <!-- ── Work ── -->
+    <section id="work" class="section">
       <div class="container">
         <header class="sec-head">
-          <p class="eyebrow">Projects</p>
-          <h2>Everything, written up properly</h2>
-          <p>Each project has its own page with the question, the data, what I built and what I did not, and an interactive figure. Work done for an employer is described without naming the organisation or anyone in it.</p>
+          <h2>Selected work</h2>
+          <p>Each of these I can talk about for an hour: the design decisions, the dead ends, and what I would do differently.</p>
         </header>
-        <div class="filters" role="group" aria-label="Filter projects">
-          <button class="filter is-active" data-filter="all" aria-pressed="true">All</button>
-          <button class="filter" data-filter="eo" aria-pressed="false">Earth observation</button>
-          <button class="filter" data-filter="ai" aria-pressed="false">Data and AI at work</button>
-          <button class="filter" data-filter="eng" aria-pressed="false">Data engineering</button>
-          <button class="filter" data-filter="apps" aria-pressed="false">Apps and tools</button>
-        </div>
-        <div class="index-grid" id="indexGrid">
-          <a class="pcard" href="#p-damage-maps" data-cat="eo"><span class="chip chip--done">Built 2026</span><h3>Damage Maps</h3><p>Sentinel-1 radar change detection across seven areas, with a null control in North London.</p><span class="pcard__tags">SAR · Earth Engine · Python</span></a>
-          <a class="pcard" href="#p-shenzhen" data-cat="eo"><span class="chip chip--live">Interactive</span><h3>Shenzhen, watched from orbit</h3><p>A market town becomes a city of seventeen million, in Landsat and nighttime lights.</p><span class="pcard__tags">Landsat · DMSP · VIIRS</span></a>
-          <a class="pcard" href="#p-displacement" data-cat="eo"><span class="chip chip--build">In build</span><h3>Displacement pressure model</h3><p>Population, lights and vegetation as proxy signals for movement under pressure.</p><span class="pcard__tags">WorldPop · VIIRS · MODIS</span></a>
-          <a class="pcard" href="#p-peatland" data-cat="eo"><span class="chip chip--build">In build</span><h3>Peatland recovery, tested properly</h3><p>Difference-in-differences on Sentinel-2: did restoration work?</p><span class="pcard__tags">Sentinel-2 · Causal inference</span></a>
-          <a class="pcard" href="#p-grid" data-cat="eng"><span class="chip chip--build">In build</span><h3>GB grid constraint costs</h3><p>A warehouse for where flexibility exists and where the grid pays to switch wind off.</p><span class="pcard__tags">DuckDB · dbt · SQL</span></a>
-          <a class="pcard" href="#p-library-assistant" data-cat="ai"><span class="chip chip--build">Prototype</span><h3>Library assistant</h3><p>Retrieval-augmented answers over 1,250 resources, with a citation for every claim.</p><span class="pcard__tags">RAG · BM25 · Evaluation</span></a>
-          <a class="pcard" href="#p-spending-model" data-cat="ai"><span class="chip chip--build">Testing</span><h3>Security spending model</h3><p>Testing a colleague's model of what security spending returns.</p><span class="pcard__tags">Monte Carlo · Bayesian updating</span></a>
-          <a class="pcard" href="#p-data-map" data-cat="ai"><span class="chip chip--build">In progress</span><h3>Data map and CRM clean-up</h3><p>Where an organisation's data lives, how it moves, and what to fix before any AI touches it.</p><span class="pcard__tags">Governance · CRM · UK GDPR</span></a>
-          <a class="pcard" href="#p-peripatos" data-cat="apps"><span class="chip chip--live">In use</span><h3>Peripatos</h3><p>A learning grove for maths, data and computing, grown from what I meet each day.</p><span class="pcard__tags">JavaScript · SVG · Claude</span></a>
-          <a class="pcard" href="#p-side-a" data-cat="apps"><span class="chip chip--live">Live</span><h3>Side A / Side B</h3><p>Thirteen years of my Spotify listening, enriched with open music data.</p><span class="pcard__tags">Python · MusicBrainz · ECharts</span></a>
-          <a class="pcard" href="#p-music-catalogue" data-cat="apps"><span class="chip chip--plan">Planned</span><h3>A better music catalogue</h3><p>What a catalogue would look like if it matched how people remember music.</p><span class="pcard__tags">Music metadata</span></a>
-          <a class="pcard" href="#p-fuel" data-cat="eng"><span class="chip chip--live">Live</span><h3>Petrol price tracker</h3><p>How far unleaded prices rose in 2026, from the government's Fuel Finder data.</p><span class="pcard__tags">DuckDB · D3 · Data cleaning</span></a>
-          <a class="pcard" href="#p-ski" data-cat="apps"><span class="chip chip--live">Live</span><h3>Ski Alpin Fantasy</h3><p>A French-language fantasy league for World Cup alpine skiing.</p><span class="pcard__tags">JavaScript · Firebase</span></a>
-          <a class="pcard" href="#p-small" data-cat="apps"><span class="chip chip--live">Various</span><h3>Smaller builds</h3><p>Stock reports, a portfolio tracker, a gym tracker and a meal planner.</p><span class="pcard__tags">Python · Excel · Firebase</span></a>
-        </div>
-      </div>
-    </section>
 
-    <!-- ════════════════ PROJECT PAGES ════════════════ -->
-    <section class="view" id="view-project" data-view="project" aria-label="Project">
-      <div class="ptabs-wrap">
-        <div class="container">
-          <nav class="ptabs" id="ptabs" aria-label="Projects">
-            <span class="ptabs__group">Earth observation</span>
-            <a href="#p-damage-maps">Damage Maps</a><a href="#p-shenzhen">Shenzhen</a><a href="#p-displacement">Displacement</a><a href="#p-peatland">Peatland</a>
-            <span class="ptabs__group">Data and AI at work</span>
-            <a href="#p-library-assistant">Library assistant</a><a href="#p-spending-model">Spending model</a><a href="#p-data-map">Data map</a>
-            <span class="ptabs__group">Engineering and apps</span>
-            <a href="#p-grid">Grid costs</a><a href="#p-fuel">Fuel prices</a><a href="#p-peripatos">Peripatos</a><a href="#p-side-a">Side A / Side B</a><a href="#p-music-catalogue">Music catalogue</a><a href="#p-ski">Ski Fantasy</a><a href="#p-small">Smaller builds</a>
-          </nav>
-        </div>
-      </div>
-
-      <div class="container project-host">
-
-        <!-- ── Damage Maps ── -->
-        <article class="project" id="p-damage-maps">
-          <header class="project__head">
-            <p class="eyebrow">Earth observation · self-directed · 2026</p>
-            <h2>Damage Maps</h2>
-            <p class="standfirst">Assessing structural damage in conflict zones is slow and dangerous on the ground, and cloud and smoke defeat optical satellites. Radar sees through both. I applied a published change-detection method, developed at UCL, to Sentinel-1 radar time series across seven areas, and built the pipeline around it.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--done">Built 2026</span></dd></div>
-            <div><dt>My part</dt><dd>Data pipeline, the runs, mapping and checks. I did not write the algorithm.</dd></div>
-            <div><dt>Data</dt><dd>Sentinel-1 SAR, NASA FIRMS thermal anomalies</dd></div>
-            <div><dt>Tools</dt><dd>Google Earth Engine, Python</dd></div>
-          </dl>
-
-          <figure class="fig">
-            <div class="fig__head"><h3>The seven areas, and a gas plant</h3><p class="fig__hint">Select a point</p></div>
-            <div class="mapbox" id="damageMap"></div>
-            <div class="fig__readout" id="damageInfo" aria-live="polite">Seven areas were analysed by hand with the same method, including a deliberate control in North London where nothing happened.</div>
-          </figure>
-
-          <div class="prose">
-            <h3>The question</h3>
-            <p>Can open radar data show where structures changed after an event, quickly, and without anyone on the ground? Sentinel-1 passes over most places every few days and its radar returns do not care about cloud or night.</p>
-            <h3>How the method works</h3>
-            <p>The pixel-wise t-test compares each pixel's radar backscatter in a window before a date with a window after it. A large, consistent shift gets flagged. The method's own code also masks out non-urban land and smooths across several scales so that a single noisy pixel does not trigger a detection. Those steps are part of the published method, not additions of mine.</p>
-          </div>
-
-          <figure class="fig">
-            <div class="fig__head"><h3>One pixel, before and after</h3><p class="fig__hint">An illustration, not real data</p></div>
-            <div class="chart" id="ttestChart"></div>
-            <div class="controls">
-              <label>Change in backscatter <output id="ttChangeOut">2.0 dB</output><input type="range" id="ttChange" min="0" max="6" step="0.25" value="2"></label>
-              <label>Speckle noise <output id="ttNoiseOut">1.5 dB</output><input type="range" id="ttNoise" min="0.5" max="4" step="0.25" value="1.5"></label>
-            </div>
-            <div class="fig__readout" id="ttRead" aria-live="polite"></div>
-          </figure>
-
-          <div class="prose">
-            <h3>What I built</h3>
-            <p>For each area: pulling the Sentinel-1 series on Earth Engine, running the method around an event date, mapping the output, and sense-checking it against published building footprints. Separately, in March 2026, I built a small monitor that polled NASA FIRMS thermal anomalies at six sites and, five days after an alert, emailed me a reminder to run the radar check by hand once post-event imagery existed. It logged from 20 to 31 March, recorded no anomalies, and is not running now. The public version of that code queues the radar check automatically when the analysis libraries are available.</p>
-            <h3>The control</h3>
-            <p>North London is on the list on purpose. I pointed the identical pipeline at a city where nothing had happened on the test date, to see what a false-positive floor looks like before trusting any detection elsewhere.</p>
-            <h3>What it cannot do</h3>
-            <p>It detects change, not damage. New construction, flooding and large parked vehicles all change radar backscatter. That is why a person looks before anything is called damage, and why I would never quote a detection rate for this work: the method's published validation is the author's, not mine.</p>
-            <h3>Next</h3>
-            <p>A full write-up of one area, with method and caveats, is in draft.</p>
-          </div>
-          <figure class="fig fig--image">
+        <!-- Damage Maps -->
+        <article class="case">
+          <div class="case__media">
             <img src="assets/images/damage-qatar.jpg" alt="Satellite view of the Ras Laffan industrial area in Qatar with building-level change detection overlaid in yellow and red" loading="lazy" width="1400" height="697">
-            <figcaption>Change-detection output over the Ras Laffan industrial area, Qatar. Imagery: Esri and OpenStreetMap contributors; analysis on Google Earth Engine.</figcaption>
-          </figure>
-          <p class="project__links"><a href="https://github.com/adakin97/geospatial-alert-pipeline" target="_blank" rel="noopener">Monitor code on GitHub &rarr;</a></p>
-          <p class="ask">Ask me about: radar backscatter versus optical, why validation is the hard part, and where a person still beats the algorithm.</p>
+            <p class="case__caption">PWTT change-detection output over the Ras Laffan industrial area, Qatar. Imagery: Esri and OpenStreetMap contributors; analysis on Google Earth Engine.</p>
+          </div>
+          <div class="case__body">
+            <div class="case__meta">
+              <span class="chip chip--live">Running</span>
+              <span class="case__topic">Earth observation · OSINT</span>
+            </div>
+            <h3>Damage Maps</h3>
+            <p>
+              Assessing structural damage in conflict zones is slow and dangerous on the ground, and
+              cloud cover defeats optical satellites. Radar sees through both. This pipeline runs on
+              Google Earth Engine: a NASA FIRMS thermal feed flags candidate sites within hours of an
+              event, then the PWTT change-detection algorithm, developed at UCL, tests Sentinel-1 radar
+              time series for structural change. I built the ingestion, processing, validation and
+              mapping around the algorithm.
+            </p>
+            <p>
+              Applied across seven areas, including Bakhmut, Tehran, Natanz and Al Udeid. At one site
+              it surfaced structural change that had not been reported in open sources at the time of
+              analysis.
+            </p>
+            <p class="case__ask">Ask me about: radar backscatter versus optical, why validation is the hard part, and where a person still beats the algorithm.</p>
+            <div class="case__tags"><span class="tag">Sentinel-1 SAR</span><span class="tag">Google Earth Engine</span><span class="tag">Python</span><span class="tag">NASA FIRMS</span></div>
+            <p class="case__note">Code private. Happy to walk through it in person.</p>
+          </div>
         </article>
 
-        <!-- ── Shenzhen ── -->
-        <article class="project" id="p-shenzhen">
-          <header class="project__head">
-            <p class="eyebrow">Earth observation · urban growth · 2026</p>
-            <h2>Shenzhen, watched from orbit</h2>
-            <p class="standfirst">In the late 1970s Shenzhen was a market town across the border from Hong Kong. Today it is a city of around seventeen million. I used Landsat archives and three decades of nighttime-lights data to measure that growth from space.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--live">Interactive</span></dd></div>
-            <div><dt>Data</dt><dd>Landsat surface reflectance, DMSP-OLS and VIIRS nighttime lights</dd></div>
-            <div><dt>Tools</dt><dd>Google Earth Engine</dd></div>
-            <div><dt>Write-up</dt><dd>Essay in draft</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>Drag the slider</h3><p class="fig__hint">Upper half Shenzhen, lower half Hong Kong</p></div>
-            <div class="compare" id="compare">
-              <div class="compare__frame">
-                <img class="compare__img compare__img--under" src="assets/images/shenzhen-2023.jpg" alt="Landsat satellite image of Shenzhen and Hong Kong in 2023, showing dense urban growth" width="1100" height="1169" loading="lazy">
-                <div class="compare__topwrap" id="compareTop">
-                  <img class="compare__img" src="assets/images/shenzhen-1990.jpg" alt="Landsat satellite image of the same area in the late 1980s, mostly farmland and small settlements" width="1100" height="1169" loading="lazy">
-                </div>
-                <div class="compare__handle" id="compareHandle" aria-hidden="true"><span></span></div>
-                <span class="compare__label compare__label--left">1987&ndash;90</span>
-                <span class="compare__label compare__label--right">2023</span>
-              </div>
-              <input type="range" class="compare__range" id="compareRange" min="0" max="100" value="50" aria-label="Compare Landsat imagery: slide between the late 1980s and 2023">
+        <!-- Shenzhen -->
+        <article class="case case--full">
+          <div class="case__body">
+            <div class="case__meta">
+              <span class="chip chip--live">Interactive</span>
+              <span class="case__topic">Urban growth · Remote sensing</span>
             </div>
-            <figcaption>Landsat surface-reflectance composites, 1987 to 1990 median and 2023. Processed on Google Earth Engine.</figcaption>
-          </figure>
-          <figure class="fig">
-            <div class="fig__head"><h3>The same growth, at night</h3>
+            <h3>Shenzhen, watched from orbit</h3>
+            <p>
+              In the late 1970s Shenzhen was a market town across the border from Hong Kong. Today it
+              is a city of around seventeen million. I used Landsat archives and three decades of
+              nighttime-lights data to measure that growth from space. Drag the slider: the upper half
+              of the frame is Shenzhen, the lower half is Hong Kong.
+            </p>
+          </div>
+
+          <div class="compare" id="compare">
+            <div class="compare__frame">
+              <img class="compare__img compare__img--under" src="assets/images/shenzhen-2023.jpg" alt="Landsat satellite image of Shenzhen and Hong Kong in 2023, showing dense urban growth" width="1100" height="1169">
+              <div class="compare__topwrap" id="compareTop">
+                <img class="compare__img" src="assets/images/shenzhen-1990.jpg" alt="Landsat satellite image of the same area in the late 1980s, mostly farmland and small settlements" width="1100" height="1169">
+              </div>
+              <div class="compare__handle" id="compareHandle" aria-hidden="true"><span></span></div>
+              <span class="compare__label compare__label--left">1987&ndash;90</span>
+              <span class="compare__label compare__label--right">2023</span>
+            </div>
+            <input type="range" class="compare__range" id="compareRange" min="0" max="100" value="50" aria-label="Compare Landsat imagery: slide between the late 1980s and 2023">
+            <p class="case__caption">Landsat surface-reflectance composites, 1987 to 1990 median and 2023. Processed on Google Earth Engine.</p>
+          </div>
+
+          <div class="lights">
+            <div class="lights__head">
+              <h4>The same growth, at night</h4>
               <div class="lights__buttons" role="group" aria-label="Choose a year of nighttime lights imagery">
-                <button class="lights__btn is-active" data-year="1992" aria-pressed="true">1992</button>
-                <button class="lights__btn" data-year="2000" aria-pressed="false">2000</button>
-                <button class="lights__btn" data-year="2013" aria-pressed="false">2013</button>
-                <button class="lights__btn" data-year="2023" aria-pressed="false">2023</button>
+                <button class="lights__btn is-active" data-year="1992">1992</button>
+                <button class="lights__btn" data-year="2000">2000</button>
+                <button class="lights__btn" data-year="2013">2013</button>
+                <button class="lights__btn" data-year="2023">2023</button>
               </div>
             </div>
-            <img class="lights__img" id="lightsImg" src="assets/images/lights-1992.jpg" alt="Nighttime lights over the Shenzhen and Hong Kong region in 1992" width="1000" height="670" loading="lazy">
-            <figcaption>1992 to 2013 from the DMSP-OLS sensor, 2023 from VIIRS.</figcaption>
-          </figure>
-          <div class="prose">
-            <h3>The question</h3>
-            <p>How fast did Shenzhen actually grow, and where? Population statistics for fast-growing Chinese cities undercount migrants, so a physical measure from space is a useful second opinion.</p>
-            <h3>What the sensors can and cannot show</h3>
-            <p>The two lights sensors differ, and DMSP saturates over bright city cores, so the night images are maps of extent rather than comparable brightness. Landsat shows the land itself turning from farmland and fish ponds to built surface. Being straight about what a sensor cannot show is half the job.</p>
-            <h3>Next</h3>
-            <p>A written essay on this work is in draft.</p>
+            <img class="lights__img" id="lightsImg" src="assets/images/lights-1992.jpg" alt="Nighttime lights over the Shenzhen and Hong Kong region in 1992" width="1000" height="670">
+            <p class="case__caption">
+              1992 to 2013 from the DMSP-OLS sensor, 2023 from VIIRS. The two sensors differ, and DMSP
+              saturates over bright city cores, so treat these as maps of extent rather than comparable
+              brightness. Being straight about what a sensor cannot show is half the job.
+            </p>
+          </div>
+
+          <div class="case__body">
+            <div class="case__tags"><span class="tag">Landsat</span><span class="tag">DMSP / VIIRS</span><span class="tag">Google Earth Engine</span><span class="tag">Urban economics</span></div>
+            <p class="case__note">A written essay on this work is in draft.</p>
           </div>
         </article>
 
-        <!-- ── Displacement ── -->
-        <article class="project" id="p-displacement">
-          <header class="project__head">
-            <p class="eyebrow">Earth observation · humanitarian data · in build</p>
-            <h2>Displacement pressure model</h2>
-            <p class="standfirst">When conflict displaces people, ground reporting lags days or weeks behind the movement itself. I am building a model that reads open satellite and population data as proxy signals for movement under pressure. It is unfinished and unvalidated, and this page says so.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--build">In build</span></dd></div>
-            <div><dt>Data</dt><dd>WorldPop population, VIIRS nighttime lights, MODIS vegetation index</dd></div>
-            <div><dt>What it gave me</dt><dd>A working knowledge of open geospatial data I now use across projects</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>Why one signal is never enough</h3><p class="fig__hint">Choose what happened on the ground</p></div>
-            <div class="scenario" role="group" aria-label="Scenario">
-              <button class="scenario__btn is-active" data-s="flee" aria-pressed="true">People leave a town</button>
-              <button class="scenario__btn" data-s="power" aria-pressed="false">The power fails</button>
-              <button class="scenario__btn" data-s="harvest" aria-pressed="false">Harvest season</button>
-              <button class="scenario__btn" data-s="camp" aria-pressed="false">A camp opens nearby</button>
-            </div>
-            <div class="signals" id="signals"></div>
-            <div class="fig__readout" id="signalRead" aria-live="polite"></div>
-          </figure>
-          <div class="prose">
-            <h3>The question</h3>
-            <p>Can open data flag where population pressure is building before anyone reports it? The honest problem is that every proxy moves for several reasons. Lights dim when people leave, but also when the grid fails. Vegetation changes when fields are abandoned, but also with the season.</p>
-            <h3>The approach</h3>
-            <p>Combine signals so that each rules out the others' false alarms, and make the model say what it cannot see. A town whose lights dim while the vegetation stays normal and a nearby settlement brightens tells a different story from a town where everything dims at once.</p>
-            <h3>Next</h3>
-            <p>Pick one past displacement with good ground records and test whether the combined signal would have flagged it, before building anything general.</p>
-          </div>
-        </article>
+        <div class="case-grid">
+          <!-- Displacement -->
+          <article class="mini">
+            <div class="case__meta"><span class="chip chip--build">In build</span></div>
+            <h3>Displacement pressure model</h3>
+            <p>
+              When conflict displaces people, ground reporting lags days or weeks behind the movement
+              itself. I am building a model that reads WorldPop population rasters, VIIRS nighttime
+              lights and MODIS vegetation indices as proxy signals for population movement under
+              pressure. The hard problem is honesty: lights dim for many reasons, and the model has to
+              say what it cannot see.
+            </p>
+            <div class="case__tags"><span class="tag">WorldPop</span><span class="tag">VIIRS</span><span class="tag">MODIS</span></div>
+          </article>
 
-        <!-- ── Peatland ── -->
-        <article class="project" id="p-peatland">
-          <header class="project__head">
-            <p class="eyebrow">Earth observation · causal inference · in build</p>
-            <h2>Peatland recovery, tested properly</h2>
-            <p class="standfirst">Did the UK's peatland restoration schemes actually work? Almost every satellite project is a classification or a change map. This one treats restoration as a quasi-experiment and asks for a causal answer.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--build">In build</span></dd></div>
-            <div><dt>Data</dt><dd>Sentinel-2 moisture and vegetation indices; restored sites and dates from the UK Land Carbon Registry</dd></div>
-            <div><dt>Method</dt><dd>Difference-in-differences with matched controls, event study</dd></div>
-            <div><dt>Tools</dt><dd>Google Earth Engine, Python</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>Difference-in-differences, live</h3><p class="fig__hint">Simulated sites, not results</p></div>
-            <div class="chart" id="didChart"></div>
-            <div class="legend"><span><i class="sw sw--a"></i>Restored sites</span><span><i class="sw sw--b"></i>Matched controls</span><span><i class="sw sw--line"></i>Restoration date</span></div>
-            <div class="controls">
-              <label>True effect of restoration <output id="didEffOut">0.05</output><input type="range" id="didEff" min="0" max="0.12" step="0.01" value="0.05"></label>
-              <label>Noise <output id="didNoiseOut">0.02</output><input type="range" id="didNoise" min="0.005" max="0.06" step="0.005" value="0.02"></label>
-              <label>Controls drift apart before restoration <output id="didTrendOut">no</output><input type="range" id="didTrend" min="0" max="0.04" step="0.005" value="0"></label>
-            </div>
-            <div class="fig__readout" id="didRead" aria-live="polite"></div>
-          </figure>
-          <div class="prose">
-            <h3>The question</h3>
-            <p>Did restored peatland diverge from comparable unrestored sites after the intervention, and can the intervention be detected from space without being told when it happened?</p>
-            <h3>The design</h3>
-            <p>Monthly cloud-masked Sentinel-2 composites of moisture (NDMI) and vegetation (NDVI) for each restored site and a matched unrestored control, with the number of clear pixels carried alongside because cloud loss is not random. The difference-in-differences estimate compares the change at restored sites with the change at controls over the same months. The validation is blind: breakpoint detection on the index series, compared afterwards with restoration dates the method never saw.</p>
-            <h3>What could break it</h3>
-            <p>The whole design rests on parallel trends: without restoration, both groups would have moved together. Move the third slider above and watch the estimate go wrong while the chart still looks convincing. Spillovers to nearby controls and cloud cover that differs by season are the other two threats I am watching.</p>
-            <h3>Next</h3>
-            <p>The analysis code runs on simulated data. Next is a real site table from the registry, and one site's raw moisture series plotted before any modelling.</p>
-          </div>
-        </article>
+          <!-- Peatland -->
+          <article class="mini">
+            <div class="case__meta"><span class="chip chip--build">In build</span></div>
+            <h3>Peatland recovery, tested properly</h3>
+            <p>
+              Did the UK's peatland restoration schemes actually work? Sentinel-2 vegetation and
+              moisture series over restored sites and matched controls, deseasonalised, then a
+              difference-in-differences design around each site's restoration date. This is the
+              economics training doing real work on satellite data: a causal answer, not a before and
+              after picture.
+            </p>
+            <div class="case__tags"><span class="tag">Sentinel-2</span><span class="tag">Causal inference</span><span class="tag">Python</span></div>
+          </article>
 
-        <!-- ── Library assistant ── -->
-        <article class="project" id="p-library-assistant">
-          <header class="project__head">
-            <p class="eyebrow">Retrieval-augmented AI · day job · prototype</p>
-            <h2>A library assistant that answers only from its sources</h2>
-            <p class="standfirst">An international NGO network I work for holds around twenty years of security guidance: about 1,250 guides, toolkits and papers. People struggle to find the right one unless they already speak the vocabulary. I am building an assistant that takes a plain question, searches the library and answers only from what it finds, with a link to every source.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--build">Prototype</span></dd></div>
-            <div><dt>Built</dt><dd>Catalogue, test set, working prototype</dd></div>
-            <div><dt>Tools</dt><dd>Python, BM25 search, Claude API</dd></div>
-            <div><dt>Note</dt><dd>Prototype built with Claude Code; public content only</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>One question, four steps</h3><p class="fig__hint">Step through a real example</p></div>
-            <ol class="rag" id="ragSteps">
-              <li class="is-on"><b>Question</b><span>"Our staff have their phones searched at checkpoints. Is there guidance?"</span></li>
-              <li><b>Safety check</b><span>Not an emergency. If someone were in danger now, a fixed message would show and nothing else would run.</span></li>
-              <li><b>Understand</b><span>English, looking for a resource. Search terms rewritten into the library's vocabulary: <code>digital security devices checkpoints</code>, <code>information security phones</code>.</span></li>
-              <li><b>Search</b><span>Keyword search over 4,237 passages: one card per resource plus 1,302 pages of core guides. Best matches come from a field toolkit and an incident information handbook, page by page.</span></li>
-              <li><b>Answer</b><span>The model writes a short answer from those passages only, cites each one, gives the year of anything older than five years, and links the pages.</span></li>
-            </ol>
-            <div class="controls controls--row"><button class="btn btn--small" id="ragPrev">Back</button><button class="btn btn--small btn--primary" id="ragNext">Next step</button></div>
-          </figure>
-          <figure class="fig">
-            <div class="fig__head"><h3>How old is the library?</h3><p class="fig__hint">1,252 items by age and kind</p></div>
-            <div class="chart" id="libChart"></div>
-            <div class="legend" id="libLegend"></div>
-            <figcaption>From the catalogue I built of the public library. Guidance is the part that can be updated; records of events keep their date and get a label.</figcaption>
-          </figure>
-          <div class="prose">
-            <h3>Why retrieval, not training</h3>
-            <p>Training a model on the library would be expensive, could not cite its sources, and would go stale the day a new guide appeared. Retrieval searches the library at question time, so new guidance counts at once and every answer can be checked against its source.</p>
-            <h3>What I built</h3>
-            <p>First, a catalogue of the whole public library, collected politely from the site's sitemaps at one request a second: type, date, language, authorship and files for every item, with automatic flags for guidance that may be out of date. Then 53 test questions across finding a resource, explaining a term, other languages, sensitive questions, emergencies and out-of-scope requests, each matched to the resources a good answer should cite. Then the prototype.</p>
-            <h3>Safety rules</h3>
-            <p>An emergency gets a fixed message, never a generated one. The assistant points to guidance rather than advising on a live situation. It never invents a resource; if the library does not cover a question, it says so.</p>
-            <h3>Next</h3>
-            <p>Real member questions to replace my drafts, then the same questions through three build routes (our own build, a website plugin, a hosted product), judged on answer quality first and on whether someone other than me could run it.</p>
-          </div>
-        </article>
+          <!-- Grid Flexibility -->
+          <article class="mini">
+            <div class="case__meta"><span class="chip chip--build">In build</span></div>
+            <h3>GB grid constraint costs</h3>
+            <p>
+              Great Britain pays generators to switch off when the grid cannot carry their power. I am
+              building a warehouse to put numbers on that: public electricity and constraint-cost data
+              landed in DuckDB, modelled and tested with dbt, with BigQuery as the deployment target.
+              Built deliberately as warehouse practice, with staging models, tests and documented marts
+              rather than a folder of notebooks.
+            </p>
+            <div class="case__tags"><span class="tag">DuckDB</span><span class="tag">dbt</span><span class="tag">SQL</span></div>
+          </article>
 
-        <!-- ── Spending model ── -->
-        <article class="project" id="p-spending-model">
-          <header class="project__head">
-            <p class="eyebrow">Risk modelling · day job · testing</p>
-            <h2>Testing a model of what security spending returns</h2>
-            <p class="standfirst">A colleague built a prototype that estimates the return on an NGO's security spending. The model is theirs. My part is to test it: run its maths in code, see which inputs move the answer, and write up what should change.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--build">Testing</span></dd></div>
-            <div><dt>My part</dt><dd>Review, testing and a list of eleven fixes</dd></div>
-            <div><dt>Method</dt><dd>Expected loss, Bayesian updating, Monte Carlo</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>The method in miniature</h3><p class="fig__hint">A generic illustration, not the colleague's tool</p></div>
-            <div class="chart" id="mcChart"></div>
-            <div class="controls">
-              <label>Incidents a year, best guess <output id="mcRateOut">2.0</output><input type="range" id="mcRate" min="0.5" max="8" step="0.5" value="2"></label>
-              <label>How sure of that rate <output id="mcKOut">medium</output><input type="range" id="mcK" min="1" max="3" step="1" value="2"></label>
-              <label>Cost of one incident <output id="mcCostOut">£40k</output><input type="range" id="mcCost" min="10" max="200" step="10" value="40"></label>
-              <label>Measures cut incidents by, most likely <output id="mcEffOut">30%</output><input type="range" id="mcEff" min="5" max="70" step="5" value="30"></label>
-              <label>Yearly spend on the measures <output id="mcSpendOut">£20k</output><input type="range" id="mcSpend" min="5" max="100" step="5" value="20"></label>
-            </div>
-            <div class="fig__readout" id="mcRead" aria-live="polite"></div>
-          </figure>
-          <div class="prose">
-            <h3>The problem it tackles</h3>
-            <p>Security budgets are hard to defend because the return is losses that never happened, and nobody ever observes it. The model works out an expected loss with and without the measures, then the return on what the measures cost, with ranges from 2,000 simulated years.</p>
-            <h3>What I found</h3>
-            <p>The headline should be the simulation's middle run rather than one central calculation, because a long right tail pulls the average up: move the sliders above and watch the mean and median separate. Overlapping measures can double-count, several inputs carry no range at all so the uncertainty shown is too narrow, and a bad year should not raise the return.</p>
-            <h3>The closest comparison</h3>
-            <p>Insurance. Security costs a little more than it saves in a typical year and saves a great deal in a bad one. That framing persuades better than a single return figure.</p>
-            <h3>Next</h3>
-            <p>Agree the fixes with the author, then calibrate reference rates against open incident data. A beta with the fixes was built with Claude Code for the author to take or leave.</p>
-          </div>
-        </article>
+          <!-- Ski Fantasy -->
+          <article class="mini">
+            <div class="case__meta"><span class="chip chip--live">Live</span></div>
+            <h3>Ski Alpin Fantasy</h3>
+            <p>
+              No fantasy league existed for World Cup alpine skiing, so my French-speaking friends and
+              I were tracking picks in a spreadsheet. Now it is a French-language web app: players build
+              teams of real racers and score points from live World Cup results. A full season has run
+              with an active league of real users, at zero hosting cost.
+            </p>
+            <div class="case__tags"><span class="tag">JavaScript</span><span class="tag">Firebase</span><span class="tag">GitHub Actions</span></div>
+            <p class="mini__links"><a href="https://github.com/adakin97/Ski-Alpin---Fantasy-2026" target="_blank" rel="noopener">GitHub &rarr;</a></p>
+          </article>
+        </div>
 
-        <!-- ── Data map ── -->
-        <article class="project" id="p-data-map">
-          <header class="project__head">
-            <p class="eyebrow">Data governance · day job · in progress</p>
-            <h2>Mapping an organisation's data, then cleaning it up</h2>
-            <p class="standfirst">Before any AI tool touches an organisation's data, someone has to know where that data lives and how it moves. I am mapping the systems behind a membership network and fixing how contacts and organisations are categorised, so that its impact figures can actually be counted.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--build">In progress</span></dd></div>
-            <div><dt>Building</dt><dd>Data map, improvements register, new categories</dd></div>
-            <div><dt>Rule</dt><dd>Structure, never records</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>How the data moves</h3><p class="fig__hint">Select a system. Simplified and anonymised</p></div>
-            <div class="chart" id="sysMap"></div>
-            <div class="fig__readout" id="sysRead" aria-live="polite">Solid lines move data automatically; dashed lines are copied by hand, which is where figures drift.</div>
-          </figure>
-          <div class="prose">
-            <h3>What I am building</h3>
-            <p>A data map that doubles as the organisation's UK GDPR record of processing. An improvements register: every possible fix with a stable ID, the evidence behind it and its status, so nothing is changed on a hunch. And a new way of categorising contacts and organisations, agreed with the team and migrated in bulk.</p>
-            <h3>How I am doing it</h3>
-            <p>I work from exports of the CRM's objects, fields and links, never from member records. Every change goes through sign-off, is tried on a handful of records first, and has a backup export as its undo.</p>
-            <h3>Why it comes first</h3>
-            <p>Categories drift, duplicate fields multiply and reports stop agreeing with each other. Any automation built on top inherits the mess. Rules before models.</p>
-          </div>
-        </article>
-
-        <!-- ── Grid ── -->
-        <article class="project" id="p-grid">
-          <header class="project__head">
-            <p class="eyebrow">Data engineering · energy · in build</p>
-            <h2>GB grid constraint costs</h2>
-            <p class="standfirst">Great Britain pays wind farms to switch off when the network cannot carry their power to where it is needed. The assets that could soak up that power are spread in a pattern nobody chose. I am building a warehouse to put numbers on the mismatch.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--build">In build</span></dd></div>
-            <div><dt>Stack</dt><dd>DuckDB locally, dbt models and tests, BigQuery as the target</dd></div>
-            <div><dt>Why this shape</dt><dd>Chosen to force real warehouse work, not a folder of notebooks</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>The warehouse, source to mart</h3><p class="fig__hint">Select a model</p></div>
-            <div class="chart" id="lineage"></div>
-            <div class="fig__readout" id="lineageRead" aria-live="polite">Each model is tested on the way through. The key test checks that no rows are lost in a join.</div>
-          </figure>
-          <div class="prose">
-            <h3>The question</h3>
-            <p>Where is the mismatch between where flexibility physically exists, such as heat pumps, batteries and electric vehicles, and where the grid procures it or pays to curtail generation?</p>
-            <h3>Why the data forces good habits</h3>
-            <p>The energy performance certificate register runs to about 28 million rows, which forces a warehouse. Half-hourly settlement data forces window functions. Postcode to small area to grid supply point forces real joins. Reproducibility forces dbt. Starting in DuckDB means the move to BigQuery is a change of configuration rather than of concept.</p>
-            <h3>Status</h3>
-            <p>The first models run on simulated data shaped like the real thing, with defects planted on purpose: inconsistent postcodes, duplicate certificates and missing lookups. The tests catch them. Next is one real local authority's certificates, then the settlement and constraint data.</p>
-          </div>
-        </article>
-
-        <!-- ── Fuel ── -->
-        <article class="project" id="p-fuel">
-          <header class="project__head">
-            <p class="eyebrow">Public data · data cleaning · live</p>
-            <h2>Petrol price tracker</h2>
-            <p class="standfirst">A mobile-first interactive built from the government's Fuel Finder data, showing how far unleaded prices rose across 2026, forecourt by forecourt.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--live">Live</span></dd></div>
-            <div><dt>Data</dt><dd>347,612 price reports from 8,148 forecourts</dd></div>
-            <div><dt>Tools</dt><dd>Python, DuckDB, D3</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>Checking against a published source</h3><p class="fig__hint">Average unleaded price, pence per litre</p></div>
-            <div class="chart" id="fuelChart"></div>
-            <div class="legend"><span><i class="sw sw--a"></i>My pipeline</span><span><i class="sw sw--b"></i>RAC published figure</span></div>
-          </figure>
-          <div class="prose">
-            <h3>The cleaning is the project</h3>
-            <p>Forecourts only report when their price changes, so a plain average over raw rows over-weights the busiest reporters. Each forecourt's last price of the day is carried forward until its next report, for at most 30 days, and averages are taken across forecourts. Prices outside a band around each day's national median are dropped, which catches typing errors such as prices entered in pounds. Brand spellings are merged, and every forecourt's coordinates are checked against its own postcode.</p>
-            <h3>Checks</h3>
-            <p>Against the RAC's published averages, the pipeline gives 132.94p against 132.83p on 1 March and 153.66p against 152.83p on 31 March. On the 4,688 forecourts with a price on both 1 February and 1 October, the rise is 43.0p; the headline uses a rounder 42p.</p>
-          </div>
-          <p class="project__links"><a href="https://adakin97.github.io/fuel-finder/" target="_blank" rel="noopener">Open the tracker &rarr;</a> <a href="https://github.com/adakin97/fuel-finder" target="_blank" rel="noopener">GitHub &rarr;</a></p>
-        </article>
-
-        <!-- ── Peripatos ── -->
-        <article class="project" id="p-peripatos">
-          <header class="project__head">
-            <p class="eyebrow">Learning · personal · in use</p>
-            <h2>Peripatos: a learning grove</h2>
-            <p class="standfirst">I have learnt a lot of maths, statistics and economics and forgotten more of it. Peripatos turns what I come across each day, at work or in reading, into short study cards, and grows each one as a tree as I recall it. The name is the covered walk at Aristotle's Lyceum, where teaching happened on foot.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--live">In use</span></dd></div>
-            <div><dt>Topics</dt><dd>52, across maths, data science, economics and computing</dd></div>
-            <div><dt>Built</dt><dd>With Claude Code, to my brief. Private for now</dd></div>
-          </dl>
-          <figure class="fig">
-            <div class="fig__head"><h3>Grow a tree</h3><p class="fig__hint">Every topic grows the same way each time</p></div>
-            <div class="grower">
-              <div class="grower__tree" id="growTree"></div>
-              <div class="controls">
-                <label>Recalled correctly <output id="growStageOut">3 times</output><input type="range" id="growStage" min="0" max="5" step="1" value="3"></label>
-                <label>Days since last review <output id="growLateOut">on time</output><input type="range" id="growLate" min="0" max="10" step="1" value="0"></label>
-                <div class="controls__row"><button class="btn btn--small" id="growSeed">Another topic</button><span class="muted" id="growName"></span></div>
-              </div>
-            </div>
-          </figure>
-          <div class="prose">
-            <h3>How it works</h3>
-            <p>A path shows everything I have planted in the order I met it, with forks suggesting what to learn next, starting with gaps underneath what I already know. Daily walks are spaced repetition: a plant I recall comes back after 1, 2, 5, 12, 30 and then 75 days, and one I neglect wilts. Claude turns a note such as "gamma distribution, seen in a risk model" into a card and names the topics around it.</p>
-            <h3>The detail I like</h3>
-            <p>Each tree is drawn by a recursive function seeded by its topic, so the same topic always grows the same way, and recursion is itself one of the topics in the grove.</p>
-            <h3>Next</h3>
-            <p>Fresh questions written each time so walks do not repeat, and a teach-it-back mode.</p>
-          </div>
-        </article>
-
-        <!-- ── Side A / Side B ── -->
-        <article class="project" id="p-side-a">
-          <header class="project__head">
-            <p class="eyebrow">Personal data · music · live</p>
-            <h2>Side A / Side B</h2>
-            <p class="standfirst">Thirteen years of my Spotify listening, from November 2013 to October 2026, cleaned, enriched with open music data and turned into a dashboard friends can explore.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--live">Live</span></dd></div>
-            <div><dt>Data</dt><dd>Spotify extended streaming history, MusicBrainz, Deezer, ReccoBeats</dd></div>
-            <div><dt>Tools</dt><dd>Python, ECharts</dd></div>
-          </dl>
-          <div class="prose">
-            <h3>The pipeline</h3>
-            <p>One clean table from the raw export, with IP addresses dropped. Genres from MusicBrainz for the 6,000 most-played artists, which cover 95% of listening time, at the one request a second MusicBrainz allows. Deezer album genres fill in many of the artists MusicBrainz could not tag, most-played first, which took coverage past 95% before the long tail of small artists stopped being worth the time. Valence, energy and tempo for every track from ReccoBeats. Every lookup is cached and resumable.</p>
-            <h3>What it taught me</h3>
-            <p>Genre is the weakest part of music data. Two open sources disagree on what a genre is, coverage falls off a cliff in the long tail, and one artist rarely fits one label. That is where the next project starts.</p>
-          </div>
-          <p class="project__links"><a href="https://adakin97.github.io/music" target="_blank" rel="noopener">Open the dashboard &rarr;</a></p>
-        </article>
-
-        <!-- ── Music catalogue ── -->
-        <article class="project" id="p-music-catalogue">
-          <header class="project__head">
-            <p class="eyebrow">Music data · personal · planned</p>
-            <h2>A better way to catalogue music</h2>
-            <p class="standfirst">Music libraries are catalogued by artist, album and genre, but that is rarely how people remember or look for music. This project will explore a better catalogue, starting from my own listening history.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--plan">Planned</span></dd></div>
-            <div><dt>Starting point</dt><dd>The cleaned data behind Side A / Side B</dd></div>
-          </dl>
-          <div class="concept">
-            <h3>Concept note (early draft)</h3>
-            <dl>
-              <dt>Problem</dt><dd>[To write: what is wrong with how music is catalogued today, and for whom.]</dd>
-              <dt>What I already know</dt><dd>Open genre data covers the most-played artists well and the long tail badly, and different sources use different genre schemes.</dd>
-              <dt>Questions</dt><dd>[To decide: a catalogue for one listener or many; what a better catalogue groups by; which open data to join.]</dd>
-              <dt>Next</dt><dd>[To write.]</dd>
-            </dl>
-          </div>
-        </article>
-
-        <!-- ── Ski ── -->
-        <article class="project" id="p-ski">
-          <header class="project__head">
-            <p class="eyebrow">Web app · live</p>
-            <h2>Ski Alpin Fantasy</h2>
-            <p class="standfirst">No fantasy league existed for World Cup alpine skiing, so my French-speaking friends and I were tracking picks in a spreadsheet. Now it is a French-language web app.</p>
-          </header>
-          <dl class="glance">
-            <div><dt>Status</dt><dd><span class="chip chip--live">Live</span></dd></div>
-            <div><dt>Stack</dt><dd>JavaScript, Firebase authentication and database, GitHub Pages</dd></div>
-            <div><dt>Cost to run</dt><dd>Nothing</dd></div>
-          </dl>
-          <div class="prose">
-            <h3>How it works</h3>
-            <p>Players build a team of five real racers and score points from World Cup results, with a leaderboard, skier rankings by discipline and a race calendar. A scheduled GitHub Action refreshes the news each day. A full season has run with an active league of real users.</p>
-          </div>
-          <p class="project__links"><a href="https://github.com/adakin97/Ski-Alpin---Fantasy-2026" target="_blank" rel="noopener">GitHub &rarr;</a></p>
-        </article>
-
-        <!-- ── Smaller builds ── -->
-        <article class="project" id="p-small">
-          <header class="project__head">
-            <p class="eyebrow">Tools · various</p>
-            <h2>Smaller builds</h2>
-            <p class="standfirst">Tools I built because I needed them, and kept using.</p>
-          </header>
-          <div class="small-grid">
-            <article class="small-card"><h3>Stock reports</h3><p>A Python pipeline turning market data into formatted Excel and PDF equity reports, sold to paying clients as a freelance side business.</p></article>
-            <article class="small-card"><h3>Portfolio tracker</h3><p>A 15-sheet formula-driven Excel workbook built by a Python engine: positions, FX and performance from broker data, rebuilt on demand.</p></article>
-            <article class="small-card"><h3>Gym tracker</h3><p>A mobile-first workout logger with real-time sync, in daily use on the gym floor. The live app is behind a login.</p><p class="project__links"><a href="https://github.com/adakin97/gym-tracker" target="_blank" rel="noopener">GitHub &rarr;</a></p></article>
-            <article class="small-card"><h3>Meals</h3><p>A shared weekly meal planner, two users, one database, no login. Settles the "what are we eating this week" conversation.</p><p class="project__links"><a href="https://adakin97.github.io/meals" target="_blank" rel="noopener">Live &rarr;</a> <a href="https://github.com/adakin97/meals" target="_blank" rel="noopener">GitHub &rarr;</a></p></article>
-          </div>
-        </article>
-
-        <nav class="pnext" id="pnext" aria-label="Next and previous project"></nav>
+        <h3 class="sec-sub">Smaller builds</h3>
+        <div class="small-grid">
+          <article class="small-card">
+            <h4>Stock reports</h4>
+            <p>A Python pipeline turning market data into formatted Excel and PDF equity reports, sold to paying clients as a freelance side business.</p>
+          </article>
+          <article class="small-card">
+            <h4>Portfolio tracker</h4>
+            <p>A 15-sheet formula-driven Excel workbook built by a Python engine: positions, FX and performance from broker data, rebuilt on demand.</p>
+          </article>
+          <article class="small-card">
+            <h4>Gym tracker</h4>
+            <p>A mobile-first workout logger with real-time sync, in daily use on the gym floor. The live app is behind a login.</p>
+            <p class="mini__links"><a href="https://github.com/adakin97/gym-tracker" target="_blank" rel="noopener">GitHub &rarr;</a></p>
+          </article>
+          <article class="small-card">
+            <h4>Meals</h4>
+            <p>A shared weekly meal planner, two users, one database, no login. Settles the "what are we eating this week" conversation.</p>
+            <p class="mini__links"><a href="https://adakin97.github.io/meals" target="_blank" rel="noopener">Live &rarr;</a> <a href="https://github.com/adakin97/meals" target="_blank" rel="noopener">GitHub &rarr;</a></p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- ════════════════ EXPERIENCE ════════════════ -->
-    <section class="view section" id="view-experience" data-view="experience" aria-label="Experience">
+    <!-- ── Approach ── -->
+    <section id="approach" class="section section--tint">
       <div class="container">
-        <header class="sec-head"><p class="eyebrow">Experience</p><h2>Where I have worked</h2></header>
-        <div class="timeline">
-          <article class="job">
-            <div class="job__when">2026 &ndash; now</div>
-            <div class="job__what">
-              <h3>An international NGO network</h3>
-              <p class="job__role">Data, AI and Systems Specialist, London</p>
-              <ul>
-                <li>Building a retrieval-based assistant over the network's public guidance library, with a catalogue, a test set and a working prototype.</li>
-                <li>Mapping the organisation's data systems and cleaning up its CRM categories ahead of any AI use.</li>
-                <li>Reviewing and testing a model of the return on security spending.</li>
-              </ul>
-            </div>
+        <header class="sec-head">
+          <h2>How I think about data</h2>
+          <p>The projects differ. The discipline behind them does not.</p>
+        </header>
+        <div class="principles">
+          <article class="principle">
+            <h3>Rules before models</h3>
+            <p>
+              At Bloomberg I used a scikit-learn classifier to analyse a framework of 5,000+ business
+              rules and work out which should survive a data-model migration. The lesson stuck. Most
+              data quality problems are governance problems, and a model only helps once you
+              understand the rules it sits on.
+            </p>
           </article>
+          <article class="principle">
+            <h3>Humans in the loop, on purpose</h3>
+            <p>
+              A good pipeline decides what a machine should do and where a person must check. The
+              ingestion workflow I built at Bloomberg routed exceptions to analysts rather than
+              passing them silently. My damage pipeline flags candidate sites automatically but
+              nothing gets called damage until a person has looked. Knowing what not to automate is
+              the skill.
+            </p>
+          </article>
+          <article class="principle">
+            <h3>Validation is the deliverable</h3>
+            <p>
+              A detection nobody can trust is noise. The interesting work is the checking: baselines,
+              false positives, and what the sensor cannot see. This page says "in build" wherever
+              something is unfinished, because a claim without evidence behind it costs more than it
+              earns.
+            </p>
+          </article>
+          <article class="principle">
+            <h3>Write it down</h3>
+            <p>
+              Data only changes decisions when someone who does not write code can act on it. At
+              Bloomberg I was the main point of contact for the EMEA ESG loans dataset and turned it
+              into written market research, including two editions of LMA Horizons read by banks and
+              asset managers.
+            </p>
+          </article>
+        </div>
+
+        <figure class="pipeline">
+          <figcaption>The shape most of my pipelines take</figcaption>
+          <svg viewBox="0 0 980 200" role="img" aria-label="Diagram of a data pipeline: sources flow to ingestion, then rule checks. Clean records flow to a trusted dataset and analysis. Exceptions route to human review, which feeds rule updates back into the checks.">
+            <defs>
+              <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+                <path d="M0,0 L10,5 L0,10 z" fill="#8a8f98"/>
+              </marker>
+            </defs>
+            <g class="pipe-box"><rect x="10" y="55" width="130" height="52" rx="10"/><text x="75" y="86">Sources</text></g>
+            <g class="pipe-box"><rect x="205" y="55" width="130" height="52" rx="10"/><text x="270" y="86">Ingestion</text></g>
+            <g class="pipe-box pipe-box--accent"><rect x="400" y="55" width="150" height="52" rx="10"/><text x="475" y="86">Rule checks</text></g>
+            <g class="pipe-box"><rect x="620" y="10" width="160" height="52" rx="10"/><text x="700" y="41">Trusted dataset</text></g>
+            <g class="pipe-box pipe-box--human"><rect x="620" y="110" width="160" height="52" rx="10"/><text x="700" y="141">Human review</text></g>
+            <g class="pipe-box"><rect x="845" y="10" width="125" height="52" rx="10"/><text x="907" y="41">Analysis</text></g>
+            <g class="pipe-line">
+              <line x1="140" y1="81" x2="198" y2="81" marker-end="url(#arr)"/>
+              <line x1="335" y1="81" x2="393" y2="81" marker-end="url(#arr)"/>
+              <path d="M550 70 L612 40" fill="none" marker-end="url(#arr)"/>
+              <path d="M550 93 L612 132" fill="none" marker-end="url(#arr)"/>
+              <line x1="780" y1="36" x2="838" y2="36" marker-end="url(#arr)"/>
+              <path d="M700 162 C700 182 475 182 475 115" fill="none" marker-end="url(#arr)" stroke-dasharray="5 5"/>
+            </g>
+            <text class="pipe-note" x="585" y="30">clean</text>
+            <text class="pipe-note" x="577" y="125">exceptions</text>
+            <text class="pipe-note" x="587" y="196">rules updated</text>
+          </svg>
+        </figure>
+      </div>
+    </section>
+
+    <!-- ── Experience ── -->
+    <section id="experience" class="section">
+      <div class="container">
+        <header class="sec-head">
+          <h2>Experience</h2>
+        </header>
+        <div class="timeline">
+
           <article class="job">
-            <div class="job__when">2025 &ndash; 2026</div>
+            <div class="job__when">2025 &ndash; now</div>
             <div class="job__what">
               <h3>Travel and independent projects</h3>
-              <p class="job__role">Five months through Southeast Asia, then satellite and data projects</p>
+              <p class="job__role">Five months through Southeast Asia, then the projects on this page</p>
               <ul>
-                <li>Applied a radar change-detection method across seven areas and built the pipeline around it.</li>
-                <li>Displacement model, peatland analysis and the GB grid warehouse in build.</li>
+                <li>Built the satellite damage-detection pipeline and applied it across seven areas.</li>
+                <li>Displacement model, peatland analysis and the GB grid warehouse all in build.</li>
                 <li>Freelance stock analysis for paying clients.</li>
               </ul>
             </div>
           </article>
+
           <article class="job">
             <div class="job__when">2023 &ndash; 2025</div>
             <div class="job__what">
@@ -691,6 +345,7 @@
               </ul>
             </div>
           </article>
+
           <article class="job">
             <div class="job__when">2021 &ndash; 2023</div>
             <div class="job__what">
@@ -702,52 +357,98 @@
               </ul>
             </div>
           </article>
+
           <article class="job">
             <div class="job__when">2018</div>
             <div class="job__what">
               <h3>United Nations (CEB)</h3>
               <p class="job__role">Financial Data Analyst Intern, Geneva</p>
-              <ul><li>Consolidated financial reporting data across UN system bodies for General Assembly presentation.</li></ul>
+              <ul>
+                <li>Consolidated financial reporting data across UN system bodies for General Assembly presentation.</li>
+              </ul>
             </div>
           </article>
+
         </div>
+
         <div class="edu">
-          <div class="edu__item"><h3>MSc Economics</h3><p>University of Amsterdam. Focus on behavioural and experimental economics. Thesis: a randomised experiment on how people behave when working with text-generating AI, run on GPT-2 in 2020, before the tools were mainstream.</p></div>
-          <div class="edu__item"><h3>BSc Mathematics and Economics</h3><p>University of Bristol.</p></div>
-          <div class="edu__item"><h3>Courses</h3><p>Machine Learning, LSE (2022) · Fundamentals of GIS, UC Davis (in progress) · AWS Certified Machine Learning Engineer Associate (in progress)</p></div>
+          <div class="edu__item">
+            <h3>MSc Economics</h3>
+            <p>University of Amsterdam. Focus on behavioural and experimental economics. Thesis: a randomised experiment on how people behave when working with text-generating AI, run on GPT-2 in 2020, before the tools were mainstream.</p>
+          </div>
+          <div class="edu__item">
+            <h3>BSc Mathematics and Economics</h3>
+            <p>University of Bristol.</p>
+          </div>
+          <div class="edu__item">
+            <h3>Courses</h3>
+            <p>Machine Learning, LSE (2022) · Fundamentals of GIS, UC Davis (in progress) · AWS Certified Machine Learning Engineer Associate (in progress)</p>
+          </div>
         </div>
       </div>
     </section>
 
-    <!-- ════════════════ ABOUT ════════════════ -->
-    <section class="view section" id="view-about" data-view="about" aria-label="About">
+    <!-- ── About ── -->
+    <section id="about" class="section section--tint">
       <div class="container">
-        <header class="sec-head"><p class="eyebrow">About</p><h2>Hello</h2></header>
+        <header class="sec-head">
+          <h2>About</h2>
+        </header>
         <div class="about">
-          <div class="about__photo"><img src="assets/images/profile.jpg" alt="Alexander Dakin" width="260" height="260" loading="lazy"></div>
+          <div class="about__photo">
+            <img src="assets/images/profile.jpg" alt="Alexander Dakin" width="260" height="260" loading="lazy">
+          </div>
           <div class="about__text">
-            <p>I am Swiss and British, grew up in French-speaking Switzerland, and live in London. I studied economics because I wanted to understand how the world allocates things, and ended up in data because that is where the evidence lives.</p>
-            <p>The thread behind the satellite work is cities. I read urban economics and planning for fun, I care about housing affordability, and the Shenzhen project exists because I wanted to watch a city grow. Satellite data is the closest thing to fieldwork you can do from a desk in London, which is exactly why I like it.</p>
-            <p>Away from a screen: skiing, properly, a Swiss upbringing will do that, hence the French-language fantasy league. Travel, most recently five months through Southeast Asia. And the first thing I ever shipped was a <a href="https://adakin97.github.io/pong/" target="_blank" rel="noopener">browser pong game</a>, kept online out of affection.</p>
-            <ul class="about__facts"><li>London, UK and Swiss work rights</li><li>English native, French fluent</li><li>Python daily, R and SQL in the toolkit</li></ul>
+            <p>
+              I am Swiss and British, grew up in French-speaking Switzerland, and live in London.
+              I studied economics because I wanted to understand how the world allocates things, and
+              ended up in data because that is where the evidence lives.
+            </p>
+            <p>
+              The thread behind the satellite work is cities. I read urban economics and planning for
+              fun, I care about housing affordability, and the Shenzhen project exists because I
+              wanted to watch a city grow. Satellite data is the closest thing to fieldwork you can do
+              from a desk in London, which is exactly why I like it.
+            </p>
+            <p>
+              Away from a screen: skiing, properly, a Swiss upbringing will do that, hence the
+              French-language fantasy league. Travel, most recently five months through Southeast
+              Asia. And the first thing I ever shipped was a
+              <a href="https://adakin97.github.io/pong/" target="_blank" rel="noopener">browser pong game</a>,
+              kept online out of affection.
+            </p>
+            <ul class="about__facts">
+              <li>London, UK and Swiss work rights</li>
+              <li>English native, French fluent</li>
+              <li>Python daily, R and SQL in the toolkit</li>
+            </ul>
           </div>
         </div>
+
         <div class="now">
-          <h3>Now <span class="now__date">November 2026</span></h3>
+          <h3>Now <span class="now__date">August 2026</span></h3>
           <ul>
-            <li>Working on data, AI and systems for an international NGO network: a library assistant, a data map and a review of a security spending model.</li>
-            <li>Revising maths, statistics and computing with Peripatos.</li>
-            <li>Planning a project on how to catalogue music better.</li>
+            <li>Finishing the UC Davis GIS course and the AWS ML Engineer certification.</li>
+            <li>Building the GB grid warehouse: SQL, dbt and BigQuery on real electricity data.</li>
+            <li>Running the peatland difference-in-differences analysis through to its write-up.</li>
           </ul>
         </div>
-        <div class="contact" id="contact">
-          <h2 class="contact__title">Let's talk</h2>
-          <p class="contact__copy">Maps, data and AI for questions about the real world. Get in touch about work, a collaboration, or just to compare notes. I reply quickly.</p>
-          <div class="contact__actions">
-            <a href="mailto:alex.dakin@bluewin.ch" class="btn btn--primary">alex.dakin@bluewin.ch</a>
-            <a href="https://www.linkedin.com/in/alexander-dakin/" class="btn btn--secondary" target="_blank" rel="noopener">LinkedIn</a>
-            <a href="assets/Alex_Dakin_CV.pdf" class="btn btn--secondary" download>Download CV</a>
-          </div>
+      </div>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact" class="section">
+      <div class="container container--narrow">
+        <h2 class="contact__title">Let's talk</h2>
+        <p class="contact__copy">
+          I am looking for data science, data engineering and geospatial roles where the data
+          describes the real world, in London or remote. Freelance projects welcome too. I reply
+          quickly.
+        </p>
+        <div class="contact__actions">
+          <a href="mailto:alex.dakin@bluewin.ch" class="btn btn--primary">alex.dakin@bluewin.ch</a>
+          <a href="https://www.linkedin.com/in/alexander-dakin/" class="btn btn--secondary" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="assets/Alex_Dakin_CV.pdf" class="btn btn--secondary" download>Download CV</a>
         </div>
       </div>
     </section>
@@ -762,13 +463,10 @@
         <a href="https://www.linkedin.com/in/alexander-dakin/" target="_blank" rel="noopener">LinkedIn</a>
         <a href="mailto:alex.dakin@bluewin.ch">Email</a>
       </div>
-      <p class="footer__note">Built by hand. No framework, no tracking. Maps from Natural Earth via world-atlas.</p>
+      <p class="footer__note">Built by hand. No framework, no tracking.</p>
     </div>
   </footer>
 
-  <div class="tip" id="tip" role="status" aria-live="polite"></div>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.9.0/d3.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/topojson-client@3.1.0/dist/topojson-client.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
